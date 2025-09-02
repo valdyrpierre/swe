@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Add Speaker</title>
+        <link rel="stylesheet" href="homePage.css">
+        
+    </head>
+    <body>
+        <h1>Add Speaker</h1>
+        <form action="addSpeaker" method="POST" class="speaker-form">
+            <div class="form-row-group">
+                <div class="form-row">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-row">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+            <div class="form-row-group">
+                <div class="form-row">
+                    <label for="speaker_contact">Speaker Contact:</label>
+                    <input type="text" id="speaker_contact" name="speaker_contact" required>
+                </div>
+                <div class="form-row">
+                    <label for="speaker_dayofcontact">Speaker Day of Contact:</label>
+                    <input type="text" id="speaker_dayofcontact" name="speaker_dayofcontact" required>
+                </div>
+            </div>
+            <div class="form-row-group">
+                <div class="form-row">
+                    <label for="presentation_title">Presentation Title:</label>
+                    <input type="text" id="presentation_title" name="presentation_title" required>
+                </div>
+                <div class="form-row">
+                    <label for="Presentationroom">Presentation Room:</label>
+                    <input type="text" id="Presentationroom" name="Presentationroom" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-row">
+                    <label for="topic">Topic:</label>
+                    <input type="text" id="topic" name="topic" required>
+                </div>
+                <div class="form-row">
+                    <label for="topic_description">Topic Description:</label>
+                    <textarea id="topic_description" name="topic_description" rows="4" cols="32" required></textarea>
+                </div>
+            </div>
+                <input type="submit" value="Add Speaker" class="submit-btn">
+            </div>
+        </form>
+    </body> 
+</html>
