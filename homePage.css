@@ -1,3 +1,63 @@
+ .form {
+    max-width: 420px;
+    margin: 32px auto;
+    padding: 32px 36px;
+    background: #f9f9f9;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+ .form .form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    gap: 16px;
+}
+ .form label {
+    flex: 0 0 140px;
+    font-weight: 500;
+    color: #2d3a4a;
+}
+ .form input[type="text"] {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+.form-section-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 28px 0 16px 0;
+    color: #0078d4;
+    letter-spacing: 0.5px;
+}
+.submit-btn {
+    background: #0078d4;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.submit-btn:hover {
+    background: #005fa3;
+}
+.form-section-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 24px 0 12px 0;
+    color: #2d3a4a;
+    letter-spacing: 0.5px;
+}
+.speaker-form .form-row {
+    margin-bottom: 10px;
+}
+.speaker-form .form-row-group {
+    margin-bottom: 18px;
+}
 .form-row textarea {
     flex: 1;
     padding: 8px 12px;
@@ -28,7 +88,6 @@
     padding: 24px 32px;
     background: #f9f9f9;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 .form-row {
     display: flex;
