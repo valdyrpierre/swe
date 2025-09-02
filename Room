@@ -7,6 +7,17 @@
     <body>
         <h1>Room Information</h1>
         <form action="room" method="POST" class="room-form">
+            <div class="form-row>"
+                <div class = "form-row">
+                    <label for ="FirstName" >First Name:</label>
+                    <input type="text" id="FirstName" name="FirstName" required>
+                </div>
+                <div class = "form-row">
+                    
+                    <label for ="LastName" >Last Name:</label>
+                    <input type="text" id="LastName" name="LastName" required> 
+                </div>
+            
                 <div class="form-row">
                 <label for="roomNumber">Room Number:</label>
                 <input type="text" id="roomNumber" name="roomNumber" required>
@@ -18,6 +29,14 @@
             <div class="form-row">
                 <label for="Topic">Topic:</label>
                 <input type="text" id="Topic" name="Topic" required>
+            </div>
+            <div class "form-row">
+                <label for = "timeSlot">Time Slot</label>
+                <input type ="text" id="timeStart" name="timeStart" required>
+                <label for = "to"> to </label>
+
+                <input type ="text" id="timeEnd" name="timeEnd" required>
+                
             </div>
         </form>
         <button> submit</button>
