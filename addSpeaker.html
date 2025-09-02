@@ -7,47 +7,46 @@
     </head>
     <body>
         <h1>Add Speaker</h1>
-        <form action="addSpeaker" method="POST" class="speaker-form">
-            <div class="form-row-group">
-                <div class="form-row">
-                    <label for="firstName">First Name:</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                <div class="form-row">
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
-            </div>
-            <div class="form-row-group">
-                <div class="form-row">
-                    <label for="speaker_contact">Speaker Contact:</label>
-                    <input type="text" id="speaker_contact" name="speaker_contact" required>
-                </div>
-                <div class="form-row">
-                    <label for="speaker_dayofcontact">Speaker Day of Contact:</label>
-                    <input type="text" id="speaker_dayofcontact" name="speaker_dayofcontact" required>
-                </div>
-            </div>
-            <div class="form-row-group">
-                <div class="form-row">
-                    <label for="presentation_title">Presentation Title:</label>
-                    <input type="text" id="presentation_title" name="presentation_title" required>
-                </div>
-                <div class="form-row">
-                    <label for="Presentationroom">Presentation Room:</label>
-                    <input type="text" id="Presentationroom" name="Presentationroom" required>
-                </div>
+    <form action="addSpeaker" method="POST" class="form">
+            <h2 class="form-section-title">Speaker Information</h2>
+            <div class="form-row">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
             </div>
             <div class="form-row">
-                <div class="form-row">
-                    <label for="topic">Topic:</label>
-                    <input type="text" id="topic" name="topic" required>
-                </div>
-                <div class="form-row">
-                    <label for="topic_description">Topic Description:</label>
-                    <textarea id="topic_description" name="topic_description" rows="4" cols="32" required></textarea>
-                </div>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
             </div>
+            <div class="form-row">
+                <label for="speaker_contact">Contact:</label>
+                <input type="text" id="speaker_contact" name="speaker_contact" required>
+            </div>
+            <div class="form-row">
+                <label for="speaker_dayofcontact">Day of Contact:</label>
+                <input type="text" id="speaker_dayofcontact" name="speaker_dayofcontact" required>
+            </div>
+            <h2 class="form-section-title">Presentation Details</h2>
+            <div class="form-row">
+                <label for="presentation_title">Title:</label>
+                <input type="text" id="presentation_title" name="presentation_title" required>
+            </div>
+            <div class="form-row">
+                <label for="Presentationroom">Room:</label>
+                <input type="text" id="Presentationroom" name="Presentationroom" required>
+            </div>
+            <div class="form-row">
+                <label for="topic">Topic:</label>
+                <input type="text" id="topic" name="topic" required>
+            </div>
+            <div class="form-row">
+                <label for="start_time">Start Time:</label>
+                <input type="text" id="start_time" name="start_time" required>
+            </div>
+            <div class="form-row">
+                <label for="end_time">End Time:</label>
+                <input type="text" id="end_time" name="end_time" required>
+            </div>
+            <div class="form-row" style="justify-content: flex-end;">
                 <input type="submit" value="Add Speaker" class="submit-btn">
             </div>
         </form>
