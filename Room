@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Room Information</title>
+        <link rel="stylesheet" href="homePage.css">
+    </head>
+    <body>
+        <h1>Room Information</h1>
+        <form action="room" method="POST" class="room-form">
+                <div class="form-row">
+                <label for="roomNumber">Room Number:</label>
+                <input type="text" id="roomNumber" name="roomNumber" required>
+            </div>
+            <div class="form-row">
+                <label for="capacity">Capacity:</label>
+                <input type="number" id="capacity" name="capacity" required>
+            </div>
+            <div class="form-row">
+                <label for="Topic">Topic:</label>
+                <input type="text" id="Topic" name="Topic" required>
+            </div>
+        </form>
+        <button> submit</button>
+            
+    </body>
