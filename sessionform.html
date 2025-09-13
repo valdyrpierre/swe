@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Session Form</title>
+        <link rel="stylesheet" href="homePage.css">
+    </head>
+    <body>
+        <header>
+            <h1>Add Session</h1>
+        </header>
+        <main>
+            <form class="form">
+                <!-- Hidden field for session ID (for editing) -->
+                <input type="hidden" id="session-id" name="session-id" value="">
+
+                <div class="form-group">
+                    <label for="session-title">Session Title:</label>
+                    <input type="text" id="session-title" name="session-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="speaker">Speaker:</label>
+                    <select id="speaker" name="speaker" required>
+                        <!-- These values should be the unique IDs from your database -->
+                        <option value="">Select a speaker</option>
+                        <option value="1">val</option>
+                        <option value="2">charlie</option>
+                        <option value="3">josh</option>
+                        <option value="4">jalaya</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Time">Time:</label>
+                    <input type="time" id="Time" name="Time" required>
+                </div>
+                <div class="form-group">
+                    <label for="Room">Room:</label>
+                    <select id="Room" name="Room" required>
+                        <!-- Room IDs from your database -->
+                        <option value="">Select a room</option>
+                        <option value="101">Room 1</option>
+                        <option value="102">Room 2</option>
+                        <option value="103">Room 3</option>
+                        <option value="104">Room 4</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </main>
+    </body>
+</html>
