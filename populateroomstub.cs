@@ -11,15 +11,15 @@ using room;
 
 public class PopulateRoom_Class
 {
-    public List<string> _roomName;
-    public List<int> _roomCapacity;
+    public string _roomName;
+    public int _roomCapacity;
 
     //constructor
     public PopulateRoom_Class(string roomName, int roomCapacity)
     {
         // this will initialize the room name and capacity
-        _roomName = new List<string>();
-        _roomCapacity = new List<int>();
+        _roomName = roomName;
+        _roomCapacity = roomCapacity;
     }
 
     public void PopulateroomName(string roomName)
