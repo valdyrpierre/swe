@@ -9,32 +9,35 @@ using room;
 // consolidates information about the session
 
 
-public class PopulateRoom_Class
+public class PopulateRoom
 {
-    public string _roomName;
-    public int _roomCapacity;
+    List<string> nodeRoomNameList = new List<string>();
+    List<int> nodeRoomCapacityList = new List<int>();
+    public String RoomNames { get; protected set; }
+    public int RoomCapacity { get; protected set; }
 
-    //constructor
-    public PopulateRoom_Class(string roomName, int roomCapacity)
+    // adding a default constructor
+    public PopulateRoom()
     {
-        // this will initialize the room name and capacity
-        _roomName = roomName;
-        _roomCapacity = roomCapacity;
+
     }
 
-    public void PopulateroomName(string roomName)
+    // method to add room name
+    public void addRoomName(string r)
     {
-        // this will obtain all room name from database
-        // poplulate room name in a list 
-        //add " add room name to list"
+        // i will add room name there will get help from doc
+
+    }
+    // method to add room capacity
+    public void addRoomCapacity(int c)
+    {
+        // i will add room capacity there will get help from doc
+
     }
 
-    public void PopulateroomCapacity(int roomCapacity)
+    // method to display room list and campacity for debugging
+    public void displayRoomList()
     {
-        // this will obtain all room capacity from database
-        // poplulate room capacity in a list
-          
+        // this will display the room list and capacity for debugging
     }
-    
-
 }
