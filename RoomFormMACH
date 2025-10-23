@@ -1,0 +1,104 @@
+using System.ComponentModel;
+
+namespace RoomList
+{
+    public partial class Form1 : Form
+    {
+        private BindingList<Room> roomList = new BindingList<Room>();
+        private BindingSource bindingSource1 = new BindingSource();
+
+
+        public Form1()
+        {
+            InitializeComponent();
+            this.Load += new EventHandler(Form1_Load);
+
+            bindingSource1.DataSource = roomList; // Wrap the BindingList
+            RoomListbx.DataSource = bindingSource1;
+            RoomListbx.DisplayMember = "Name";
+        }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Optional: preload some rooms
+            roomList.Add(new Room { Name = "Washington", Capacity = 30 });
+            roomList.Add(new Room { Name = "Roma", Capacity = 50 });
+            roomList.Add(new Room { Name = "Texas", Capacity = 75 });
+            roomList.Add(new Room { Name = "Oregon", Capacity = 150 });
+            roomList.Add(new Room { Name = "Boston", Capacity = 20 });
+            roomList.Add(new Room { Name = "Albany", Capacity = 80 });
+            roomList.Add(new Room { Name = "Florida", Capacity = 85 });
+            roomList.Add(new Room { Name = "Arizona", Capacity = 45 });
+            roomList.Add(new Room { Name = "Michigan", Capacity = 80 });
+            roomList.Add(new Room { Name = "Indiana", Capacity = 85 });
+            roomList.Add(new Room { Name = "Kansas", Capacity = 45 });
+        }
+        
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RoomListbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedRoom = RoomListbx.SelectedItem as Room;
+            Capacitypopulatelbl.Text = selectedRoom != null ? $" {selectedRoom.Capacity}" : "";
+        }
+
+        private void AddRoomBtn_Click(object sender, EventArgs e)
+        {
+            string roomName = Microsoft.VisualBasic.Interaction.InputBox("Enter room name:", "Add Room", "");
+            if (string.IsNullOrWhiteSpace(roomName)) return;
+
+            string capacityInput = Microsoft.VisualBasic.Interaction.InputBox("Enter room capacity:", "Add Room", "");
+            if (!int.TryParse(capacityInput, out int capacity) || capacity <= 0) return;
+
+            roomList.Add(new Room { Name = roomName, Capacity = capacity });
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            string selectedRoom = RoomListbx.SelectedItem?.ToString();
+            if (selectedRoom != null)
+            {
+                MessageBox.Show($"Room '{selectedRoom}' saved.");
+            }
+        }
+
+        private void EditRoomBtn_Click(object sender, EventArgs e)
+        {
+            var selectedRoom = RoomListbx.SelectedItem as Room;
+            if (selectedRoom == null) return;
+
+            string newName = Microsoft.VisualBasic.Interaction.InputBox("Edit room name:", "Edit Room", selectedRoom.Name);
+            if (string.IsNullOrWhiteSpace(newName)) return;
+
+            string newCapacityInput = Microsoft.VisualBasic.Interaction.InputBox("Edit room capacity:", "Edit Room", selectedRoom.Capacity.ToString());
+            if (!int.TryParse(newCapacityInput, out int newCapacity) || newCapacity <= 0) return;
+
+            selectedRoom.Name = newName;
+            selectedRoom.Capacity = newCapacity;
+
+            RoomListbx.DisplayMember = null;
+            RoomListbx.DisplayMember = "Name";
+            Capacitypopulatelbl.Text = $" {newCapacity}";
+        }
+
+        private void Capacitypopulatelbl_Click(object sender, EventArgs e)
+        {
+            var selectedRoom = RoomListbx.SelectedItem as Room;
+            if (selectedRoom != null)
+            {
+                Capacitypopulatelbl.Text = $" {selectedRoom.Capacity}";
+            }
+            else
+            {
+                Capacitypopulatelbl.Text = "";
+            }
+        }
+
+        private void ExitBtn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+    }
+}
