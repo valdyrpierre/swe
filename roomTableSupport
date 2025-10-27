@@ -1,0 +1,97 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+ 
+namespace RoomManagementSystem
+{
+    public class RoomTableSupport
+    {
+        private readonly string _connectionString;
+ 
+        public RoomTableSupport(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+ 
+        // 1. Populate the database with initial room data
+        public void PopulateDatabase(List<Room> rooms)
+        {
+            using SqlConnection connection = new SqlConnection(_connectionString);
+            connection.Open();
+ 
+            foreach (var room in rooms)
+            {
+                using SqlCommand command = new SqlCommand("INSERT INTO Rooms (RoomName, Capacity) VALUES (@RoomName, @Capacity)", connection);
+                command.Parameters.AddWithValue("@RoomName", room.RoomName);
+                command.Parameters.AddWithValue("@Capacity", room.Capacity);
+                command.ExecuteNonQuery();
+            }
+        }
+ 
+        // 2. Retrieve all rooms from the database
+        public List<Room> RetrieveRooms()
+        {
+            List<Room> rooms = new List<Room>();
+ 
+            using SqlConnection connection = new SqlConnection(_connectionString);
+            connection.Open();
+ 
+            using SqlCommand command = new SqlCommand("SELECT RoomName, Capacity FROM Rooms", connection);
+            using SqlDataReader reader = command.ExecuteReader();
+ 
+            while (reader.Read())
+            {
+                rooms.Add(new Room
+                {
+                    RoomName = reader.GetString(0),
+                    Capacity = reader.GetInt32(1)
+                });
+            }
+ 
+            return rooms;
+        }
+ 
+        // 3. Assemble a room list into a single string (for storage or transmission)
+        public string AssembleRoomList(List<Room> rooms)
+        {
+            List<string> roomStrings = new List<string>();
+ 
+            foreach (var room in rooms)
+            {
+                roomStrings.Add($"{room.RoomName}:{room.Capacity}");
+            }
+ 
+            return string.Join("|", roomStrings);
+        }
+ 
+        // 4. Disassemble a string back into a list of Room objects
+        public List<Room> DisassembleRoomList(string roomData)
+        {
+            List<Room> rooms = new List<Room>();
+            string[] roomEntries = roomData.Split('|');
+ 
+            foreach (var entry in roomEntries)
+            {
+                string[] parts = entry.Split(':');
+                if (parts.Length == 2 && int.TryParse(parts[1], out int capacity))
+                {
+                    rooms.Add(new Room
+                    {
+                        RoomName = parts[0],
+                        Capacity = capacity
+                    });
+                }
+            }
+ 
+            return rooms;
+        }
+    }
+ 
+    // Room entity class
+    public class Room
+    {
+        public string RoomName { get; set; }
+        public int Capacity { get; set; }
+    }
+}
