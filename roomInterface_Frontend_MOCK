@@ -8,26 +8,27 @@ namespace Interface_frontEnd
 {
     public class roomInterface_FrontEnd
     {
-        roomInterface_backEnd backEnd = new roomInterface_backEnd();
+       // roomInterface_backEnd backEnd = new roomInterface_backEnd();
 
         public roomInterface_FrontEnd() { }
 
         public List<RoomList.Room> temp FormLoading()
         {
             // Call backend to get list of rooms
-            return backEnd.FormLoading();
+            return null;
         }
 
         public void FormClosing(List<RoomList.Room> temp)
         {
 
             // Call backend to save list of rooms
-            backEnd.FormClosing(temp);
+            
         }
 
         public List<RoomList.Room> temp RoomAdded(List<RoomList.Room> temp)
         {
             // send backend the list of rooms and get updated list back
+return temp;
         }
     }
 }
