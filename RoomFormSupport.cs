@@ -1,30 +1,33 @@
-﻿using CapstoneTableSide;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace Capstone
 
+namespace softwareengineer
 {
     public class RoomFormSupport
-
     {
-        CapstoneTableSide.RoomTableSupport rts = new CapstoneTableSide.RoomTableSupport();
-        public RoomFormSupport() { }
-
-
-            public void populateDataBase(List<Roomt> r)
-
+        public RoomFormSupport()
         {
-            rts.populateDataBase(r);
+            // default constructor
         }
 
-        public List<Roomt> populateRoomForm()
+        public void PopulateDataBase(List<Room> r)
         {
-            return rts.retrieveRooms();
+            rts.PopulateDataBase(r);
         }
 
+        public List<Room> retrieveRoomInformation()
+        {
+            return rts.retrieveRoomInformation();
+        }
+        public List<Room> provideRoomListForDataBase()
+        {
+            // call ProvideRoomForDataBase from roomtablesupport
+            // send list of room objects
+
+            // josh has to provide us this list
+            return rts.ProvideRoomForDataBase();
+        }
     }
 }
