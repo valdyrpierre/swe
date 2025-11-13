@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36705.20 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomFormSupport_MOCK", "RoomFormSupport_MOCK\RoomFormSupport_MOCK.csproj", "{44A3FDE1-2DE3-48E1-8FCB-45C54397DED3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44A3FDE1-2DE3-48E1-8FCB-45C54397DED3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44A3FDE1-2DE3-48E1-8FCB-45C54397DED3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44A3FDE1-2DE3-48E1-8FCB-45C54397DED3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A3FDE1-2DE3-48E1-8FCB-45C54397DED3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C95753CE-53D4-46A7-8DA0-A1551B154E27}
+	EndGlobalSection
+EndGlobal
