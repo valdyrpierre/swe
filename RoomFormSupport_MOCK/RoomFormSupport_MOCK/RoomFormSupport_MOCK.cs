@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace
-    SupportForRoomForm
+namespace SupportForRoomForm
 {
     public class Room
     {
@@ -57,7 +56,7 @@ namespace
 
         public List<Room> provideRoomListForDataBase()
         {
-            // call ProvideRoomForDataBase from roomtablesupport
+            // call ProvideRoomForDataBase from roomformsupport
             // send list of room objects
 
             // josh has to provide us this list
