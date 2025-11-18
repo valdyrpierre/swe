@@ -1,0 +1,139 @@
+
+
+using System.Collections.Generic;
+ 
+namespace RoomManagement
+
+{
+
+    public class Room
+
+    {
+
+        public string Name { get; set; }
+
+        public int Capacity { get; set; }
+ 
+        public Room(string name, int capacity)
+
+        {
+
+            Name = name;
+
+            Capacity = capacity;
+
+        }
+ 
+        public override string ToString()
+
+        {
+
+            return $"Room: {Name}, Capacity: {Capacity}";
+
+        }
+
+    }
+ 
+    public class RoomManagement
+
+    {
+
+        private List<Room> roomDatabase = new List<Room>();
+ 
+        public RoomManagement()
+
+        {
+
+            // default constructor
+
+        }
+ 
+        public string RoomName;
+
+        public int RoomCapacity;
+ 
+        public string PopulateDatabase()
+
+        {
+
+            // Simulate adding rooms to the database
+
+            roomDatabase.Add(new Room("Conference Room A", 20));
+
+            roomDatabase.Add(new Room("Lecture Hall B", 100));
+
+            roomDatabase.Add(new Room("Meeting Room C", 10));
+
+            return "Database Populated with Sample Rooms.";
+
+        }
+ 
+        public List<Room> ObtainRoomList()
+
+        {
+
+            if (roomDatabase.Count == 0)
+
+            {
+
+                AlertUser("No rooms found. Please populate the database first.");
+
+            }
+
+            return roomDatabase;
+
+        }
+ 
+        public void DisplayRoomListWithCapacities()
+
+        {
+
+            List<Room> roomList = ObtainRoomList();
+
+            Console.WriteLine("Room List:");
+
+            foreach (var room in roomList)
+
+            {
+
+                Console.WriteLine(room.ToString());
+
+            }
+
+        }
+ 
+        private void AlertUser(string message)
+
+        {
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
+            Console.WriteLine($"[Alert] {message}");
+
+            Console.ResetColor();
+
+        }
+
+    }
+ 
+    class Program
+
+    {
+
+        static void Main(string[] args)
+
+        {
+
+            RoomManagement manager = new RoomManagement();
+ 
+            Console.WriteLine(manager.PopulateDatabase());
+
+            manager.DisplayRoomListWithCapacities();
+
+        }
+
+    }
+
+}
+
+ 
