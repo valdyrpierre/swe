@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace FormSupport
 {
-    
+
     public class Room
     {
         public string name;
         public int capacity;
-                public int keyField;
+        public int keyField;
 
         public Room() { }
     }
 
-    public class DataBaseFormSupport
+    public class RoomFormSupport
     {
         List<Room> roomList_MOCK = new List<Room>();
+        DataBaseRoomSupport dbrs; //= new DataBaseRoomSupport();
 
-        public DataBaseFormSupport() { }
+        public RoomFormSupport() { }
 
         private void makeListForMocks_MOCK()
         {
@@ -43,35 +44,40 @@ namespace FormSupport
             }
         }
 
-        /*
-        public void PopulateDataBase_MOCK(List<Room> r_MOCK)
-        {
-            rts.PopulateDataBase(r_MOCK);
-        }
-
-        
-        public void PopulateDataBase(List<Room> r)
-        {
-            rts.PopulateDataBase(r);
-        }
-
-
-        public List<Room> RetrieveDataBaseFormSupport_MOCK()
-        {
-            return roomList;
-        }
-*/
-        public List<Room> retrieveRoomInformation_MOCK()
+        public List<Room> retrieveRoomInformation_MOCK()//needed when form opens
         {
             return roomList_MOCK;
         }
 
-        /* 
-         public List<Room> retrieveRoomInformation()
+        public void populateDataBase_MOCK(List<Room> r)//needed when form closes
         {
-            return rts.retrieveRoomInformation();
+            return;
         }
-        */
+
+        public List<Room> updateRoomInformation_MOCK(List<Room> r)//needed when list changes
+        {
+            return r;
+        }
+
+
+
+
+
+        public void populateDataBase(List<Room> r)//needed when form closes
+        {
+            dbrs.PopulateDataBase(r);
+        }
+
+        public List<Room> retrieveInformation()//needed when form opens
+        {
+            dbrs.obtainListFromDataBase();
+        }
+
+        public List<Room> updateRoomInformation(List<Room> r)//needed when list changes
+        {
+            return dbrs.updateRoomDataBase(r);
+        }
+
 
     }
 }
